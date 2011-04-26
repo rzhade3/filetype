@@ -7,8 +7,10 @@ class FileTypeTest < TestCase
     assert_equal :bundler, Filetype.get('gemfile') # ?
     assert_equal :bundler, Filetype.get('Gemfile.lock') # ?
     assert_equal :bundler, Filetype.get('gemfile.lock') # ?
-    assert_equal :rake, Filetype.get('Makefile')
-    assert_equal :rake, Filetype.get('makefile')
+    assert_equal :make, Filetype.get('Makefile')
+    assert_equal :make, Filetype.get('makefile')
+    assert_equal :rake, Filetype.get('Rakefile')
+    assert_equal :rake, Filetype.get('rakefile')
 
     assert_equal :actionscript, Filetype.get('foo.as')
     assert_equal :actionscript, Filetype.get('foo.mxml')
