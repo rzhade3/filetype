@@ -4,9 +4,9 @@ class FileTypeTest < TestCase
 
   test 'testing all languages with all extensions' do
     assert_equal :bundler, Filetype.get('Gemfile')
-    assert_equal :bundler, Filetype.get('gemfile') # ?
-    assert_equal :bundler, Filetype.get('Gemfile.lock') # ?
-    assert_equal :bundler, Filetype.get('gemfile.lock') # ?
+    assert_equal :bundler, Filetype.get('gemfile')
+    assert_equal :bundler, Filetype.get('Gemfile.lock')
+    assert_equal :bundler, Filetype.get('gemfile.lock')
     assert_equal :make, Filetype.get('Makefile')
     assert_equal :make, Filetype.get('makefile')
     assert_equal :rake, Filetype.get('Rakefile')
@@ -56,8 +56,8 @@ class FileTypeTest < TestCase
     assert_equal :lisp, Filetype.get('foo.lisp')   
     assert_equal :lisp, Filetype.get('foo.lsp')
     assert_equal :lua, Filetype.get('foo.lua')  
-    assert_equal :objc, Filetype.get('foo.m')   # DUPLICATE
-    assert_equal :objc, Filetype.get('foo.h')   # DUPLICATE
+    assert_equal :objc, Filetype.get('foo.m')
+    assert_equal :objc, Filetype.get('foo.h')
     assert_equal :ocaml, Filetype.get('foo.ml')
     assert_equal :ocaml, Filetype.get('foo.mli')   
     assert_equal :perl, Filetype.get('foo.pl')
