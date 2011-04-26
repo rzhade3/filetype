@@ -8,6 +8,7 @@ module Filetype
     :ada          => %w[ ada adb ads ],
     :asm          => %w[ asm s ],
     :batch        => %w[ bat cmd ],
+    :bundler      => /\A[Gg]emfile(?:\.lock)?\z/,
     :c            => %w[ c h ],
     :clojure      => %w[ clj ],
     :cpp          => %w[ cpp cc cxx m hpp hh h hxx ],
@@ -41,7 +42,7 @@ module Filetype
     :smalltalk    => %w[ st ],
     :sql          => %w[ sql ctl ],
     :yaml         => %w[ yaml yml ],
-    :xml          => %w[ xml xsl dtd xslt ],
+    :xml          => %w[ xml xsl dtd xslt ]
   }
 
   # Fetch a language for this filetype
