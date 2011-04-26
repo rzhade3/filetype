@@ -41,7 +41,7 @@ module Filetype
     :smalltalk    => %w[ st ],
     :sql          => %w[ sql ctl ],
     :yaml         => %w[ yaml yml ],
-    :xml          => %w[ xml xsl dtd xslt ],
+    :xml          => %w[ xml xsl dtd xslt ]
   }
 
   # Fetch a language for this filetype
