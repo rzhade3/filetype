@@ -3,7 +3,7 @@ require "filetype"
 
 Gem::Specification.new do |s|
   s.name        = "filetype"
-  s.version     = NewGem::VERSION
+  s.version     = Filetype::VERSION
   s.platform    = Gem::Platform::RUBY
   s.authors     = ["Lee Jarvis"]
   s.email       = ["lee@jarvis.co"]
