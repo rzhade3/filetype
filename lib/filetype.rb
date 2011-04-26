@@ -1,8 +1,7 @@
 module Filetype
-  module_function
-
   VERSION = '0.0.1'
 
+  # When an array is given, the "de facto" one should be at index 0
   FTYPES = {
     :actionscript => %w[ as mxml ],
     :ada          => %w[ ada adb ads ],
@@ -52,19 +51,8 @@ module Filetype
   #   Filetype.get('foo.rb')   #=> :ruby
   #   Filetype.get('Rakefile') #=> :rake
   # @return [Symbol] The language found or nil
-  def get(fname)
-    FTYPES.each do |ftype, rule|
-      case rule
-      when Array
-        ext = File.extname(fname)[1..-1]
-        return ftype if rule.include? ext
-      when Regexp
-        return ftype if fname.match rule
-      when String, Symbol
-        return ftype if fname == rule.to_s
-      end
-    end
-    nil
+  def self.get(fname)
+    FTYPES.find { |ftype, rule| check_type(fname, ftype, rule) }.first
   end
 
   # Fetch a list of possible languages which match this filetype
@@ -73,11 +61,8 @@ module Filetype
   # @example
   #   Filetype.all('foo.h') #=> [:c, :cpp, :objc]
   # @return [Array] The list of languages found
-  def all(fname)
-    FTYPES.select do |ftype, rule|
-      ext = File.extname(fname)[1..-1]
-      ftype if rule.is_a?(Array) && rule.include?(ext)
-    end.keys
+  def self.all(fname)
+    FTYPES.select { |ftype, rule| check_type(fname, ftype, rule) }.keys
   end
 
   # Add a file type and rule
@@ -90,7 +75,23 @@ module Filetype
   #
   #   Filetype.add(:bar, /\Ahello/)
   #   Filetype.get('hellofoo') #=> :bar
-  def add(ftype, rule)
+  def self.add(ftype, rule)
     FTYPES[ftype] = rule
+  end
+
+  private
+
+  def self.check_type(fname, ftype, rule)
+    case rule
+    when Array
+      ext = File.extname(fname)[1..-1]
+      ftype if rule.include?(ext)
+    when Regexp
+      ftype if fname.match(rule)
+    when String, Symbol
+      ftype if fname == rule.to_s
+    else
+      nil
+    end
   end
 end

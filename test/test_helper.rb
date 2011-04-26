@@ -12,3 +12,9 @@ class TestCase < MiniTest::Unit::TestCase
     end
   end
 end
+
+module MiniTest::Assertions
+  def assert_filetype(filename, filetype)
+    assert_includes Filetype.all(filename), filetype
+  end
+end
