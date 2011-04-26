@@ -1,6 +1,6 @@
 require 'test_helper'
 
-class NewGemTest < TestCase
+class FileTypeTest < TestCase
 
   test 'fetching the language of a file name' do
     assert_equal :ruby, Filetype.get('foo.rb')
