@@ -57,8 +57,7 @@ module Filetype
     FTYPES.each do |ftype, rule|
       case rule
       when Array
-        ext = File.extname(fname)[1..-1]
-        return ftype if rule.include? ext
+        return ftype if rule.include? ext(fname)
       when Regexp
         return ftype if fname.match rule
       when String, Symbol
@@ -76,8 +75,7 @@ module Filetype
   # @return [Array] The list of languages found
   def all(fname)
     FTYPES.select do |ftype, rule|
-      ext = File.extname(fname)[1..-1]
-      ftype if rule.is_a?(Array) && rule.include?(ext)
+      ftype if rule.is_a?(Array) && rule.include?(ext(fname))
     end.keys
   end
 
@@ -93,5 +91,12 @@ module Filetype
   #   Filetype.get('hellofoo') #=> :bar
   def add(ftype, rule)
     FTYPES[ftype] = rule
+  end
+
+  private
+
+  def self.ext(fname)
+    ext = File.extname(fname)[1..-1]
+    ext.downcase if ext
   end
 end
