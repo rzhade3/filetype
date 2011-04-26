@@ -1,6 +1,8 @@
 module Filetype
   module_function
 
+  VERSION = '0.0.1'
+
   FTYPES = {
     :actionscript => %w[ as mxml ],
     :ada          => %w[ ada adb ads ],
