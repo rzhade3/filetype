@@ -54,6 +54,8 @@ module Filetype
         return ftype if rule.include? ext
       when Regexp
         return ftype if fname.match rule
+      when String, Symbol
+        return ftype if fname == rule.to_s
       end
     end
     nil
