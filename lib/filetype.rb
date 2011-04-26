@@ -78,4 +78,18 @@ module Filetype
       ftype if rule.is_a?(Array) && rule.include?(ext)
     end.keys
   end
+
+  # Add a file type and rule
+  #
+  # @param [Symbol] ftype The file type
+  # @param [Object] rule  The rule to match
+  # @example
+  #   Filetype.add(:foo, ['foo', 'bar'])
+  #   Filetype.get('hello.bar') #=> :foo
+  #
+  #   Filetype.add(:bar, /\Ahello/)
+  #   Filetype.get('hellofoo') #=> :bar
+  def add(ftype, rule)
+    FTYPES[ftype] = rule
+  end
 end
