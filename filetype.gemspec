@@ -8,8 +8,8 @@ Gem::Specification.new do |s|
   s.authors     = ["Lee Jarvis"]
   s.email       = ["lee@jarvis.co"]
   s.homepage    = "http://github.com/injekt/filetype"
-  s.summary     = ""
-  s.description = ""
+  s.summary     = "Find a files type"
+  s.description = "Find a file type according to a filename or extension"
 
   s.files         = `git ls-files`.split("\n")
   s.test_files    = `git ls-files -- {test,spec,features}/*`.split("\n")
