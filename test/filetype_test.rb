@@ -12,4 +12,9 @@ class NewGemTest < TestCase
     assert_empty Filetype.all('foo.aahaha')
   end
 
+  test 'adding filetypes' do
+    Filetype.add(:bar, %w/foo bar/)
+    assert_equal :bar, Filetype.get('hello.foo')
+  end
+
 end
