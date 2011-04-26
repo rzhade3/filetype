@@ -33,7 +33,7 @@ You can of course add your own custom file types
 Simple
 ------
 
-You may notice how basic Filetype is, all it's doing is check the file name
+You may notice how basic Filetype is, all it's doing is checking the file name
 or file extension. Well, that's its intention, it was built for nothing more.
 If you want more advanced information, check out the
 [mime-types](http://mime-types.rubyforge.org/) library.
