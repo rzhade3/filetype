@@ -56,6 +56,7 @@ module Filetype
         return ftype if fname.match rule
       end
     end
+    nil
   end
 
   # Fetch a list of possible languages which match this filetype
