@@ -1,4 +1,6 @@
 module Filetype
+  module_function
+
   FTYPES = {
     :actionscript => %w[ as mxml ],
     :ada          => %w[ ada adb ads ],
@@ -40,7 +42,9 @@ module Filetype
     :xml          => %w[ xml xsl dtd xslt ],
   }
 
-  def self.get(fname)
+  # @param [String] fname The file name to check
+  # @return [Symbol] The language found or nil
+  def get(fname)
     FTYPES.each do |ftype, rule|
       case rule
       when Array
@@ -50,5 +54,18 @@ module Filetype
         return ftype if fname.match rule
       end
     end
+  end
+
+  # Fetch a list of possible languages which match this filetype
+  #
+  # @param [String] fname The file name to check
+  # @example
+  #   p Filetype.all('foo.h') #=> [:c, :cpp, :objc]
+  # @return [Array] The list of languages found
+  def all(fname)
+    FTYPES.select do |ftype, rule|
+      ext = File.extname(fname)[1..-1]
+      ftype if rule.is_a?(Array) && rule.include?(ext)
+    end.keys
   end
 end
