@@ -21,7 +21,7 @@ module Filetype
     :haskell      => %w[ hs lhs ],
     :haml         => %w[ haml ],
     :html         => %w[ html xhtml shtml htm ],
-    :java         => %w[ java ],
+    :java         => %w[ java jar ],
     :js           => %w[ js ],
     :lisp         => %w[ lisp lsp ],
     :lua          => %w[ lua ],
