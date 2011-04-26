@@ -44,7 +44,12 @@ module Filetype
     :xml          => %w[ xml xsl dtd xslt ],
   }
 
+  # Fetch a language for this filetype
+  #
   # @param [String] fname The file name to check
+  # @example
+  #   Filetype.get('foo.rb')   #=> :ruby
+  #   Filetype.get('Rakefile') #=> :rake
   # @return [Symbol] The language found or nil
   def get(fname)
     FTYPES.each do |ftype, rule|
