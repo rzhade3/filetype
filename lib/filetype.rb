@@ -70,7 +70,7 @@ module Filetype
   #
   # @param [String] fname The file name to check
   # @example
-  #   p Filetype.all('foo.h') #=> [:c, :cpp, :objc]
+  #   Filetype.all('foo.h') #=> [:c, :cpp, :objc]
   # @return [Array] The list of languages found
   def all(fname)
     FTYPES.select do |ftype, rule|
