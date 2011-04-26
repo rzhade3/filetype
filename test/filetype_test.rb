@@ -14,6 +14,7 @@ class FileTypeTest < TestCase
     assert_equal :rake, Filetype.get('Rakefile.rb')
 
     assert_equal :actionscript, Filetype.get('foo.as')
+    assert_equal :actionscript, Filetype.get('foo.AS')
     assert_equal :actionscript, Filetype.get('foo.mxml')
     assert_equal :ada, Filetype.get('foo.ada')
     assert_equal :ada, Filetype.get('foo.adb')
