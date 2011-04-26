@@ -88,6 +88,7 @@ class FileTypeTest < TestCase
     assert_equal :smalltalk, Filetype.get('foo.st')
     assert_equal :sql, Filetype.get('foo.sql')
     assert_equal :sql, Filetype.get('foo.ctl')
+    assert_equal :text, Filetype.get('foo.txt')
     assert_equal :yaml, Filetype.get('foo.yaml')
     assert_equal :yaml, Filetype.get('foo.yml')
     assert_equal :xml, Filetype.get('foo.xml')

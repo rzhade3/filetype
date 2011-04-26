@@ -41,6 +41,7 @@ module Filetype
     :shell        => %w[ sh bash ksh zsh csh ],
     :smalltalk    => %w[ st ],
     :sql          => %w[ sql ctl ],
+    :text         => %w[ txt ],
     :yaml         => %w[ yaml yml ],
     :xml          => %w[ xml xsl dtd xslt ]
   }
