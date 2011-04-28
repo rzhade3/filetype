@@ -37,6 +37,8 @@ class FileTypeTest < TestCase
     assert_equal :csharp, Filetype.get('foo.cs')
     assert_equal :css, Filetype.get('foo.css')
     assert_equal :elisp, Filetype.get('foo.el')
+    assert_equal :erb, Filetype.get('foo.rhtml')
+    assert_equal :erb, Filetype.get('foo.erb')
     assert_equal :erlang, Filetype.get('foo.erl')
     assert_equal :erlang, Filetype.get('foo.hrl')
     assert_equal :go, Filetype.get('foo.go')
@@ -72,8 +74,6 @@ class FileTypeTest < TestCase
     assert_equal :python, Filetype.get('foo.pyc')
     assert_equal :rackup, Filetype.get('foo.ru')
     assert_equal :ruby, Filetype.get('foo.rb')
-    assert_equal :ruby, Filetype.get('foo.rhtml')
-    assert_equal :ruby, Filetype.get('foo.erb')
     assert_equal :ruby, Filetype.get('foo.rake')
     assert_equal :ruby, Filetype.get('foo.rjs')
     assert_equal :sass, Filetype.get('foo.sass')
@@ -93,9 +93,9 @@ class FileTypeTest < TestCase
     assert_equal :yaml, Filetype.get('foo.yaml')
     assert_equal :yaml, Filetype.get('foo.yml')
     assert_equal :xml, Filetype.get('foo.xml')
-    assert_equal :xml, Filetype.get('foo.xsl')
     assert_equal :xml, Filetype.get('foo.dtd')
-    assert_equal :xml, Filetype.get('foo.xslt')
+    assert_equal :xsl, Filetype.get('foo.xslt')
+    assert_equal :xsl, Filetype.get('foo.xsl')
   end
 
   test 'fetching multiple languages of a file name' do
