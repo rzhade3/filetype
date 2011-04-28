@@ -41,7 +41,7 @@ module Filetype
     :python       => %w[ py pyc ],
     :rackup       => %w[ ru ],
     :rake         => /\A[Rr]akefile(?:.rb)?\z/,
-    :rar          => %[ rar ],
+    :rar          => %w[ rar ],
     :ruby         => %w[ rb rake gemspec rjs ],
     :sass         => %w[ sass ],
     :scala        => %w[ scala ],
