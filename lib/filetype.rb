@@ -20,6 +20,8 @@ module Filetype
     :erb          => %w[ rhtml erb ],
     :erlang       => %w[ erl hrl ],
     :exe          => %w[ exe ],
+    :forth        => %w[ 4th ],
+    :fsharp       => %w[ fs ],
     :gem          => %w[ gem ],
     :go           => %w[ go ],
     :groovy       => %w[ groovy gpp grunit gtmpl ],
