@@ -1,3 +1,6 @@
+# frozen_string_literal: true
+
+# This module finds the filetype given the name of a file
 module Filetype
   module_function
 
