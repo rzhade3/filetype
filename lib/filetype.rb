@@ -1,7 +1,7 @@
 module Filetype
   module_function
 
-  VERSION = '0.3.0'
+  VERSION = '0.3.1'
 
   FTYPES = {
     :actionscript => %w[ as mxml ],
@@ -16,6 +16,7 @@ module Filetype
     :csharp       => %w[ cs ],
     :css          => %w[ css ],
     :diff         => %w[ diff patch ],
+    :docker       => /\A[Dd]ockerfile(?:\.\w+)?\z/,
     :elisp        => %w[ el ],
     :erb          => %w[ rhtml erb ],
     :erlang       => %w[ erl hrl ],
