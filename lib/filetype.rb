@@ -16,6 +16,7 @@ module Filetype
     :csharp       => %w[ cs ],
     :css          => %w[ css ],
     :diff         => %w[ diff patch ],
+    :docker       => /\A[Dd]ockerfile(?:\.\w+)?\z/,
     :elisp        => %w[ el ],
     :erb          => %w[ rhtml erb ],
     :erlang       => %w[ erl hrl ],
