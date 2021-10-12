@@ -18,6 +18,7 @@ module Filetype
     :diff         => %w[ diff patch ],
     :docker       => /\A[Dd]ockerfile(?:\.\w+)?\z/,
     :elisp        => %w[ el ],
+    :epub         => %w[ epub ],
     :erb          => %w[ rhtml erb ],
     :erlang       => %w[ erl hrl ],
     :exe          => %w[ exe ],
