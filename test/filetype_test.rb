@@ -36,6 +36,8 @@ class FileTypeTest < TestCase
     assert_equal :cpp, Filetype.get('foo.hxx')
     assert_equal :csharp, Filetype.get('foo.cs')
     assert_equal :css, Filetype.get('foo.css')
+    assert_equal :docker, Filetype.get('Dockerfile')
+    assert_equal :docker, Filetype.get('Dockerfile.build')
     assert_equal :elisp, Filetype.get('foo.el')
     assert_equal :epub, Filetype.get('foo.epub')
     assert_equal :erb, Filetype.get('foo.rhtml')
