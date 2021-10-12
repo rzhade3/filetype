@@ -37,6 +37,7 @@ class FileTypeTest < TestCase
     assert_equal :csharp, Filetype.get('foo.cs')
     assert_equal :css, Filetype.get('foo.css')
     assert_equal :elisp, Filetype.get('foo.el')
+    assert_equal :epub, Filetype.get('foo.epub')
     assert_equal :erb, Filetype.get('foo.rhtml')
     assert_equal :erb, Filetype.get('foo.erb')
     assert_equal :erlang, Filetype.get('foo.erl')
