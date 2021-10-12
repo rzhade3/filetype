@@ -1,7 +1,7 @@
 module Filetype
   module_function
 
-  VERSION = '0.3.2'
+  VERSION = '1.0.0'
 
   FTYPES = {
     :actionscript => %w[ as mxml ],
@@ -70,6 +70,7 @@ module Filetype
   #   Filetype.get('Rakefile') #=> :rake
   # @return [Symbol] The language found or nil
   def get(fname)
+    fname = File.basename(fname)
     FTYPES.each do |ftype, rule|
       case rule
       when Array
@@ -90,6 +91,7 @@ module Filetype
   #   Filetype.all('foo.h') #=> [:c, :cpp, :objc]
   # @return [Array] The list of languages found
   def all(fname)
+    fname = File.basename(fname)
     FTYPES.select do |ftype, rule|
       ftype if rule.is_a?(Array) && rule.include?(ext(fname))
     end.keys

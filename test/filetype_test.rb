@@ -101,6 +101,11 @@ class FileTypeTest < TestCase
     assert_equal :xsl, Filetype.get('foo.xsl')
   end
 
+  test 'evaluates filetype against file basename' do
+    assert_equal :cpp, Filetype.get('dockerfile/foo.h')
+    assert_equal :sql, Filetype.get('Makefile/blah.sql')
+  end
+
   test 'fetching multiple languages of a file name' do
     assert_equal [:c, :cpp, :objc], Filetype.all('foo.h')
     assert_empty Filetype.all('foo.aahaha')
