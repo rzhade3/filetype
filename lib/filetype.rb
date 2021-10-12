@@ -1,7 +1,7 @@
 module Filetype
   module_function
 
-  VERSION = '0.3.2'
+  VERSION = '1.0.0'
 
   FTYPES = {
     :actionscript => %w[ as mxml ],
