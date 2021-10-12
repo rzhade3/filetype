@@ -17,6 +17,7 @@ module Filetype
     :css          => %w[ css ],
     :diff         => %w[ diff patch ],
     :elisp        => %w[ el ],
+    :epub         => %w[ epub ],
     :erb          => %w[ rhtml erb ],
     :erlang       => %w[ erl hrl ],
     :exe          => %w[ exe ],
