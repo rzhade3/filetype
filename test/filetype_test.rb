@@ -102,7 +102,7 @@ class FileTypeTest < TestCase
   end
 
   test 'evaluates filetype against file basename' do
-    assert_equal :cpp, Filetype.get('dockerfile/foo.h')
+    assert_equal :c, Filetype.get('dockerfile/foo.h')
     assert_equal :sql, Filetype.get('Makefile/blah.sql')
   end
 
