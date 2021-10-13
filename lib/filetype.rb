@@ -1,7 +1,7 @@
 module Filetype
   module_function
 
-  VERSION = '1.0.0'
+  VERSION = '1.1.0'
 
   FTYPES = {
     :actionscript => %w[ as mxml ],
@@ -56,6 +56,7 @@ module Filetype
     :sql          => %w[ sql ctl ],
     :tar          => %w[ tar ],
     :text         => %w[ txt ],
+    :toml         => %w[ toml ],
     :yaml         => %w[ yaml yml ],
     :xml          => %w[ xml dtd ],
     :xsl          => %w[ xsl xslt],
