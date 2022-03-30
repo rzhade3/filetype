@@ -1,7 +1,7 @@
 module Filetype
   module_function
 
-  VERSION = '1.1.0'
+  VERSION = '1.2.0'
 
   FTYPES = {
     :actionscript => %w[ as mxml ],
@@ -33,6 +33,7 @@ module Filetype
     :html         => %w[ html xhtml shtml htm ],
     :java         => %w[ java jar ],
     :js           => %w[ js ],
+    :json         => %w[ json ],
     :lisp         => %w[ lisp lsp ],
     :lua          => %w[ lua ],
     :make         => /\A[Mm]akefile\z/,

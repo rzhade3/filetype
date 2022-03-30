@@ -59,6 +59,7 @@ class FileTypeTest < TestCase
     assert_equal :java, Filetype.get('foo.java')
     assert_equal :java, Filetype.get('foo.jar')
     assert_equal :js, Filetype.get('foo.js')
+    assert_equal :json, Filetype.get('foo.json')
     assert_equal :lisp, Filetype.get('foo.lisp')
     assert_equal :lisp, Filetype.get('foo.lsp')
     assert_equal :lua, Filetype.get('foo.lua')
