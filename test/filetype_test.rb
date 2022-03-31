@@ -110,6 +110,7 @@ class FileTypeTest < TestCase
 
   test 'fetching multiple languages of a file name' do
     assert_equal [:c, :cpp, :objc], Filetype.all('foo.h')
+    assert_equal [:docker], Filetype.all('Dockerfile.build')
     assert_empty Filetype.all('foo.aahaha')
   end
 
